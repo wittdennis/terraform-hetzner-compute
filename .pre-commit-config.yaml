@@ -1,0 +1,18 @@
+repos:
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.86.0 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+    hooks:
+      - id: terraform_fmt
+        args:
+          - --args=-recursive
+      - id: terraform_docs
+        args:
+          - --hook-config=--add-to-existing-file=true
+          - --hook-config=--create-file-if-not-exist=true
+      - id: terraform_validate
+        args:
+          - --args=-no-color
+      - id: terraform_tflint
+        args:
+          - --args=--module
+          - --args=--enable-rule=terraform_documented_variables
