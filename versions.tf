@@ -1,15 +1,15 @@
 terraform {
-  required_version = ">= 1.4.5"
+  required_version = ">= 1.8.0"
 
   required_providers {
     hcloud = {
       source  = "hetznercloud/hcloud"
-      version = ">= 1.45.0"
+      version = "~> 1.45.0"
     }
 
     random = {
       source  = "hashicorp/random"
-      version = ">= 3.6.0"
+      version = "~> 3.6.0"
     }
   }
 }
